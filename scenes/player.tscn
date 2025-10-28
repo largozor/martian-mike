@@ -206,10 +206,14 @@ script = ExtResource("1_qlg0r")
 sprite_frames = SubResource("SpriteFrames_wnwbv")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.3693312
+frame_progress = 0.41084477
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+limit_left = 0
+limit_bottom = 257
+position_smoothing_enabled = true

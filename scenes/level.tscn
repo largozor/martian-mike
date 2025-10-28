@@ -32,13 +32,13 @@ scale = Vector2(4.296875, 0.171875)
 texture = ExtResource("3_w8frs")
 
 [node name="DeathZone" type="Area2D" parent="."]
-position = Vector2(235, 274)
+position = Vector2(237, 267)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 shape = SubResource("RectangleShape2D_w8frs")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(15, 217)
+position = Vector2(14, 219)
 
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
