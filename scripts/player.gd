@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 
 const SPEED = 125.0
@@ -17,7 +18,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump(JUMP_VELOCITY)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -43,3 +44,6 @@ func update_animations(direction) -> void:
 			animated_sprite.play("jump")
 		else:
 			animated_sprite.play("fall")
+
+func jump(force: int) -> void:
+	velocity.y = force
