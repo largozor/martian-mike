@@ -3,7 +3,7 @@ class_name Player
 
 
 const SPEED = 125.0
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite = $PlayerAnimation
 
@@ -47,3 +47,6 @@ func update_animations(direction) -> void:
 
 func jump(force: int) -> void:
 	velocity.y = force
+
+func reset() -> void:
+	print("Reset Player")
