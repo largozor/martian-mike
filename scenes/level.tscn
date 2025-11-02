@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxwo0jk5aojhw"]
+[gd_scene load_steps=10 format=3 uid="uid://dxwo0jk5aojhw"]
 
 [ext_resource type="Script" uid="uid://dgb8puvhc1lg1" path="res://scripts/level.gd" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://urwuvj1rqhwd" path="res://scenes/player.tscn" id="2_w8frs"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bl7inl4cv3pi1" path="res://scenes/jump_pad.tscn" id="4_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://4otdebl7vy6w" path="res://scenes/spike_ball.tscn" id="5_2r41h"]
 [ext_resource type="PackedScene" uid="uid://8x6rkmdhvyhc" path="res://scenes/saw.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://bi4oav7fev7if" path="res://scenes/tile_map.tscn" id="7_klq6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8sn"]
 size = Vector2(548, 20)
@@ -17,51 +18,52 @@ size = Vector2(1286, 20)
 script = ExtResource("1_w7c3h")
 
 [node name="Player" parent="." instance=ExtResource("2_w8frs")]
-position = Vector2(61, 218)
+position = Vector2(36, 192)
 collision_mask = 6
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(-100, 2)
+position = Vector2(1255, -36)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(236, 245)
 shape = SubResource("RectangleShape2D_mx8sn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(235, 245)
 scale = Vector2(4.296875, 0.171875)
 texture = ExtResource("3_w8frs")
 
 [node name="DeathZone" type="Area2D" parent="."]
-position = Vector2(237, 267)
+position = Vector2(239, 288)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 shape = SubResource("RectangleShape2D_w8frs")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(61, 220)
+position = Vector2(36, 192)
 
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="Saw" parent="Traps" instance=ExtResource("5_ppgk2")]
-position = Vector2(22, 217)
+position = Vector2(168, 182)
 
 [node name="Saw2" parent="Traps" instance=ExtResource("5_ppgk2")]
-position = Vector2(109, 31)
+position = Vector2(458, 185)
 
 [node name="SpikeBall" parent="Traps" instance=ExtResource("5_2r41h")]
-position = Vector2(217, 223)
+position = Vector2(257, 232)
 
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="JumpPad" parent="Objects" instance=ExtResource("4_mx8sn")]
-position = Vector2(105, 222)
+position = Vector2(133, 193)
 
 [node name="JumpPad2" parent="Objects" instance=ExtResource("4_mx8sn")]
-position = Vector2(162, 222)
+position = Vector2(222, 194)
 jump_force = -800
+
+[node name="TileMap" parent="." instance=ExtResource("7_klq6b")]
+layer_0/tile_data = PackedInt32Array(851968, 524288, 2, 917504, 524288, 1, 983040, 524288, 2, 851969, 393216, 0, 917505, 393216, 1, 983041, 393216, 2, 851970, 458752, 0, 917506, 458752, 1, 983042, 458752, 2, 851971, 458752, 0, 917507, 458752, 1, 983043, 458752, 2, 851972, 458752, 0, 917508, 458752, 1, 983044, 458752, 2, 851973, 458752, 0, 917509, 458752, 1, 983045, 458752, 2, 851974, 458752, 0, 917510, 458752, 1, 983046, 458752, 2, 851975, 458752, 0, 917511, 458752, 1, 983047, 458752, 2, 589832, 1114112, 1, 851976, 458752, 0, 917512, 458752, 1, 983048, 458752, 2, 589833, 1179648, 1, 851977, 458752, 0, 917513, 458752, 1, 983049, 458752, 2, 851978, 458752, 0, 917514, 458752, 1, 983050, 458752, 2, 851979, 458752, 0, 917515, 458752, 1, 983051, 458752, 2, 589836, 1114112, 1, 851980, 458752, 0, 917516, 458752, 1, 983052, 458752, 2, 589837, 1179648, 1, 851981, 458752, 0, 917517, 458752, 1, 983053, 458752, 2, 851984, 1114112, 2, 851985, 1179648, 2, 851988, 1114112, 2, 851989, 1179648, 2, 851992, 393216, 0, 917528, 393216, 1, 983064, 393216, 2, 851993, 458752, 0, 917529, 458752, 1, 983065, 458752, 2, 851994, 458752, 0, 917530, 458752, 1, 983066, 458752, 2, 851995, 458752, 0, 917531, 458752, 1, 983067, 458752, 2, 327680, 524288, 0, 393216, 524288, 1, 458752, 524288, 2, 524288, 524288, 1, 589824, 524288, 2, 655360, 524288, 1, 720896, 524288, 2, 786432, 524288, 1, 589834, 1245184, 1, 589838, 1245184, 1, 851982, 524288, 0, 917518, 524288, 1, 983054, 524288, 2, 851986, 1245184, 2, 851990, 1245184, 2, 851996, 524288, 0, 917532, 524288, 1, 983068, 524288, 2)
 
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
