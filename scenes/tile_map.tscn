@@ -317,7 +317,6 @@ pattern_1 = SubResource("TileMapPattern_47enk")
 pattern_2 = SubResource("TileMapPattern_jx7lj")
 pattern_3 = SubResource("TileMapPattern_dohrl")
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMapLayer" type="TileMapLayer"]
+use_parent_material = true
 tile_set = SubResource("TileSet_jx7lj")
-format = 2
-layer_0/tile_data = PackedInt32Array(917504, 393216, 0, 983040, 393216, 1, 1048576, 393216, 2, 917505, 458752, 0, 983041, 458752, 1, 1048577, 458752, 2, 917506, 458752, 0, 983042, 458752, 1, 1048578, 458752, 2, 917507, 458752, 0, 983043, 458752, 1, 1048579, 458752, 2, 917508, 524288, 0, 983044, 524288, 1, 1048580, 524288, 2, 917512, 1114112, 1, 917513, 1179648, 1, 917514, 1245184, 1, 917516, 1114112, 2, 917517, 1179648, 2, 917518, 1245184, 2, 917520, 1114112, 0, 917521, 1179648, 0, 917522, 1245184, 0)
