@@ -6,6 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player.global_position = start_position.get_spawn_position()
 	var traps = get_tree().get_nodes_in_group("traps")
 	for trap in traps:
 		# trap.connect("touched_player", _on_trap_touched_player)

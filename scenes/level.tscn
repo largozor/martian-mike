@@ -20,7 +20,7 @@ size = Vector2(1286, 20)
 script = ExtResource("1_w7c3h")
 
 [node name="Player" parent="." instance=ExtResource("2_w8frs")]
-position = Vector2(57, 184)
+position = Vector2(-76, 135)
 collision_mask = 6
 
 [node name="Ground" type="StaticBody2D" parent="."]
