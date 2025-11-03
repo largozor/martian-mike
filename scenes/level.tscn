@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dxwo0jk5aojhw"]
+[gd_scene load_steps=13 format=4 uid="uid://dxwo0jk5aojhw"]
 
 [ext_resource type="Script" uid="uid://dgb8puvhc1lg1" path="res://scripts/level.gd" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://urwuvj1rqhwd" path="res://scenes/player.tscn" id="2_w8frs"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bi4oav7fev7if" path="res://scenes/tile_map.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://d0liywmywp6ur" path="res://scenes/bg.tscn" id="8_b121j"]
 [ext_resource type="PackedScene" uid="uid://c4whvwpsbxky6" path="res://scenes/start.tscn" id="9_8c41q"]
+[ext_resource type="PackedScene" uid="uid://cf0o4vaclcb5e" path="res://scenes/exit.tscn" id="10_olg7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8sn"]
 size = Vector2(548, 20)
@@ -72,5 +73,8 @@ tile_map_data = PackedByteArray("AAAOAA8AAAAIAAIAAAAOAA4AAAAIAAEAAAAOAA0AAAAIAAA
 
 [node name="StartPosition" parent="." instance=ExtResource("9_8c41q")]
 position = Vector2(47, 208)
+
+[node name="Exit" parent="." instance=ExtResource("10_olg7q")]
+position = Vector2(751, 176)
 
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
