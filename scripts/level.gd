@@ -30,4 +30,4 @@ func _on_trap_touched_player() -> void:
 
 func reset_player() -> void:
 	player.velocity = Vector2.ZERO
-	player.global_position = start_position.global_position
+	player.global_position = start_position.get_spawn_position()
