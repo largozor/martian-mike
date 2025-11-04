@@ -43,8 +43,8 @@ func reset_player() -> void:
 	
 func _on_exit_body_entered(body):
 	if body is Player:
-		player.active = false
 		exit.animate()
 		if next_level != null:
+			player.active = false
 			await get_tree().create_timer(1.5).timeout
 			get_tree().change_scene_to_packed(next_level)
