@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite = $PlayerAnimation
 
-
+var active = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -17,12 +17,14 @@ func _physics_process(delta: float) -> void:
 			velocity.y = 500
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump(JUMP_VELOCITY)
+	var direction = 0
+	if active == true:
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			jump(JUMP_VELOCITY)
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
 		animated_sprite.flip_h = (direction == -1)
