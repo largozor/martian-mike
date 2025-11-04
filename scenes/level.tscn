@@ -15,6 +15,7 @@
 [node name="Level" type="Node2D"]
 script = ExtResource("1_w7c3h")
 next_level = ExtResource("2_t1rx8")
+level_time = 60
 
 [node name="Player" parent="." instance=ExtResource("2_w8frs")]
 collision_mask = 6
