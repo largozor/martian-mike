@@ -3,8 +3,8 @@ extends Node2D
 @export var next_level: PackedScene = null
 
 @onready var start_position = $StartPosition
-
 @onready var exit = $Exit
+@onready var death_zone = $DeathZone
 
 var player = null
 
@@ -18,6 +18,7 @@ func _ready() -> void:
 		# trap.connect("touched_player", _on_trap_touched_player)
 		trap.touched_player.connect(_on_trap_touched_player)
 	exit.body_entered.connect(_on_exit_body_entered)
+	death_zone.body_entered.connect(_on_death_zone_body_entered)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
