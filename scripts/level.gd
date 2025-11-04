@@ -1,12 +1,17 @@
 extends Node2D
 
 @export var next_level: PackedScene = null
+@export var level_time = 5
 
 @onready var start_position = $StartPosition
 @onready var exit = $Exit
 @onready var death_zone = $DeathZone
 
 var player = null
+
+var timer_node = null
+var time_left
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +24,24 @@ func _ready() -> void:
 		trap.touched_player.connect(_on_trap_touched_player)
 	exit.body_entered.connect(_on_exit_body_entered)
 	death_zone.body_entered.connect(_on_death_zone_body_entered)
+	
+	time_left = level_time
+	
+	timer_node = Timer.new()
+	timer_node.name = "Level_Timer"
+	timer_node.wait_time = 1
+	timer_node.timeout.connect(_on_level_timer_timeout)
+	add_child(timer_node)
+	timer_node.start()
+
+
+func _on_level_timer_timeout()-> void:
+	time_left -= 1
+	print(time_left)
+	
+	if time_left < 0:
+		reset_player()
+		time_left = level_time
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
