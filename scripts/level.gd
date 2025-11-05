@@ -11,6 +11,7 @@ var player = null
 
 var timer_node = null
 var time_left
+var win = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -36,12 +37,13 @@ func _ready() -> void:
 
 
 func _on_level_timer_timeout()-> void:
-	time_left -= 1
-	print(time_left)
-	
-	if time_left < 0:
-		reset_player()
-		time_left = level_time
+	if win == false:
+		time_left -= 1
+		print(time_left)
+		
+		if time_left < 0:
+			reset_player()
+			time_left = level_time
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,6 +68,7 @@ func reset_player() -> void:
 	
 func _on_exit_body_entered(body):
 	if body is Player:
+		win = true
 		exit.animate()
 		if next_level != null:
 			player.active = false
