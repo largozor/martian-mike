@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,8 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func show_win_screen(flag: bool):
-	$WinScreen.visible = flag
 
-func show_start_menu(flag: bool):
-	$StartMenu.visible = flag
+func _on_start_pressed() -> void:
+	visible = false
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
