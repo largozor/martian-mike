@@ -12,3 +12,11 @@ func _process(delta: float) -> void:
 
 func set_time_label(value: int):
 	$TimeLabel.text = "TIME = " + str(value)
+	if 5 < value and value <= 10:
+		$TimeLabel.label_settings.font_color = Color.ORANGE
+	elif 2 < value and value <= 5:
+		$TimeLabel.label_settings.font_color = Color.ORANGE_RED
+	elif value <= 2:
+		$TimeLabel.label_settings.font_color = Color.RED
+	else:
+		$TimeLabel.label_settings.font_color = Color.WHITE
