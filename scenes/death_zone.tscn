@@ -8,4 +8,6 @@ position = Vector2(567, 293)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4326, 0)
+scale = Vector2(8.32, 1)
 shape = SubResource("RectangleShape2D_w8frs")
