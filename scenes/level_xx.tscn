@@ -1,0 +1,44 @@
+[gd_scene load_steps=13 format=3 uid="uid://6bly1c4h761h"]
+
+[ext_resource type="Script" uid="uid://dgb8puvhc1lg1" path="res://scripts/level.gd" id="1_nu270"]
+[ext_resource type="PackedScene" uid="uid://ca600mc1tb7ft" path="res://scenes/death_zone.tscn" id="2_8ab03"]
+[ext_resource type="PackedScene" uid="uid://urwuvj1rqhwd" path="res://scenes/player.tscn" id="3_navnu"]
+[ext_resource type="PackedScene" uid="uid://ckwncc7mrxo7w" path="res://scenes/ui_layer.tscn" id="4_kb5y6"]
+[ext_resource type="PackedScene" uid="uid://d0liywmywp6ur" path="res://scenes/bg.tscn" id="5_4o1cg"]
+[ext_resource type="Texture2D" uid="uid://ck0bw2fvdohkg" path="res://assets/textures/bg/Pink.png" id="6_4gb5a"]
+[ext_resource type="PackedScene" uid="uid://c4whvwpsbxky6" path="res://scenes/start.tscn" id="7_qflq0"]
+[ext_resource type="PackedScene" uid="uid://cf0o4vaclcb5e" path="res://scenes/exit.tscn" id="8_o6wh7"]
+[ext_resource type="PackedScene" uid="uid://bi4oav7fev7if" path="res://scenes/tile_map.tscn" id="9_qr8ao"]
+[ext_resource type="PackedScene" uid="uid://4otdebl7vy6w" path="res://scenes/spike_ball.tscn" id="10_yf1fa"]
+[ext_resource type="PackedScene" uid="uid://8x6rkmdhvyhc" path="res://scenes/saw.tscn" id="11_8ab03"]
+[ext_resource type="PackedScene" uid="uid://bl7inl4cv3pi1" path="res://scenes/jump_pad.tscn" id="11_ky7lw"]
+
+[node name="Level_XX" type="Node2D"]
+script = ExtResource("1_nu270")
+level_time = 15
+is_final_level = true
+
+[node name="DeathZone" parent="." instance=ExtResource("2_8ab03")]
+
+[node name="Player" parent="." instance=ExtResource("3_navnu")]
+
+[node name="UILayer" parent="." instance=ExtResource("4_kb5y6")]
+
+[node name="BG" parent="." instance=ExtResource("5_4o1cg")]
+bg_texture = ExtResource("6_4gb5a")
+
+[node name="StartPosition" parent="." instance=ExtResource("7_qflq0")]
+
+[node name="Exit" parent="." instance=ExtResource("8_o6wh7")]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("9_qr8ao")]
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="SpikeBall" parent="Traps" instance=ExtResource("10_yf1fa")]
+
+[node name="Saw" parent="Traps" instance=ExtResource("11_8ab03")]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="JumpPad" parent="Objects" instance=ExtResource("11_ky7lw")]
