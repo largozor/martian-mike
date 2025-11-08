@@ -9,6 +9,7 @@ extends Node2D
 @onready var death_zone = $DeathZone
 @onready var hud = $UILayer/HUD
 @onready var ui_layer  = $UILayer
+@onready var sfx = $"/root/AudioPlayer"
 
 var player = null
 
@@ -68,11 +69,12 @@ func _process(delta: float) -> void:
 
 func _on_death_zone_body_entered(body: Node2D) -> void:
 	reset_player()
-	
+	sfx.play_sfx("hurt")
 
 
 func _on_trap_touched_player() -> void:
 	reset_player()
+	sfx.play_sfx("hurt")
 
 func reset_player() -> void:
 	reset_level_timer(level_time)

@@ -6,6 +6,7 @@ const SPEED = 125.0
 const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite = $PlayerAnimation
+@onready var sfx = $"/root/AudioPlayer"
 
 var active = true
 
@@ -21,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	if active == true:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			jump(JUMP_VELOCITY)
+			sfx.play_sfx("jump")
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
