@@ -51,6 +51,12 @@ func _on_level_timer_timeout()-> void:
 			time_left = level_time
 			hud.set_time_label(time_left)
 
+func reset_level_timer(time: int) -> void:
+	timer_node.stop()
+	time_left = level_time
+	timer_node.start()
+	hud.set_time_label(time_left)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -69,8 +75,10 @@ func _on_trap_touched_player() -> void:
 	reset_player()
 
 func reset_player() -> void:
+	reset_level_timer(level_time)
 	player.velocity = Vector2.ZERO
 	player.global_position = start_position.get_spawn_position()
+
 	
 func _on_exit_body_entered(body):
 	if body is Player:
