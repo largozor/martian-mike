@@ -1168,13 +1168,13 @@ texture = ExtResource("1_tjuek")
 [sub_resource type="TileSet" id="TileSet_jx7lj"]
 physics_layer_0/collision_layer = 2
 terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Green_grass"
+terrain_set_0/terrain_0/name = "green_grass"
 terrain_set_0/terrain_0/color = Color(0.6642778, 5.5542885e-05, 0.5353971, 1)
-terrain_set_0/terrain_1/name = "Orange_grass"
+terrain_set_0/terrain_1/name = "orange_grass"
 terrain_set_0/terrain_1/color = Color(0.087092794, 0.45957947, 0.7420333, 1)
-terrain_set_0/terrain_2/name = "Pink_grass 2"
+terrain_set_0/terrain_2/name = "pink_grass"
 terrain_set_0/terrain_2/color = Color(0.018599287, 0.5809373, 7.70092e-07, 1)
-terrain_set_0/terrain_3/name = ""
+terrain_set_0/terrain_3/name = "wood_platforms"
 terrain_set_0/terrain_3/color = Color(0.108568005, 0.5367324, 0.38391978, 1)
 terrain_set_0/terrain_4/name = "stone_bricks"
 terrain_set_0/terrain_4/color = Color(0.5068457, 0.43926898, 0.020540664, 1)
