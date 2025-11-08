@@ -28,4 +28,7 @@ func play_sfx(effect: String) -> void:
 	add_child(player)
 	player.play()
 	
+	await player.finished
+	player.queue_free()
+	
 	
